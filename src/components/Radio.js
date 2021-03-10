@@ -6,9 +6,11 @@ import Player from "./Player";
 export default function Radio() {
   const [stations, setStations] = useState();
   const [stationFilter, setStationFilter] = useState("all");
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     setupApi(stationFilter).then((data) => setStations(data));
+    setOffset(Math.floor(Math.random() * 11));
   }, [stationFilter]);
 
   const setupApi = async (stationFilter) => {
@@ -19,6 +21,7 @@ export default function Radio() {
         language: "english",
         tag: stationFilter,
         limit: 30,
+        offset: offset,
       })
       .then((data) => {
         return data;
