@@ -6,4 +6,4 @@ A react online radio using `radio-browser-api` and `react-h5-audio-player`
 
 ###
 
-Check it out!
+[Check it out! @ https://online-radio.netlify.app](https://online-radio.netlify.app/)
