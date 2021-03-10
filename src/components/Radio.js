@@ -10,8 +10,13 @@ export default function Radio() {
 
   useEffect(() => {
     setupApi(stationFilter).then((data) => setStations(data));
-    setOffset(Math.floor(Math.random() * 11));
+    // eslint-disable-next-line
   }, [stationFilter]);
+
+  useEffect(() => {
+    setOffset(Math.floor(Math.random() * 11));
+    // eslint-disable-next-line
+  }, []);
 
   const setupApi = async (stationFilter) => {
     const api = new RadioBrowserApi(fetch.bind(window), "La Rockolla");
